@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>BlogForm</title>
+</head>
+<body class="blogForm">
+    <div class="innerWrap">
+        <h2>ブログフォーム</h2>
+        <form action="blog_create.php" method="POST">
+            <p class="blogTitle">ブログタイトル<input type="text" name="title" placeholder="タイトルを入力してください"></p>
+            <p class="blogText">ブログ本文<textarea name="content" id="content" cols="30" rows="10" placeholder="本文を入力してください"></textarea></p>
+            <p class="blogCategory">カテゴリ
+                <select name="category">
+                    <option value="1">日常</option>
+                    <option value="2">プログラミング</option>
+                </select>
+            </p>
+            <p class="publish">
+                <label><input type="radio" name="publish_status" value="1" checked>公開</label>
+                <label><input type="radio" name="publish_status" value="2">非公開</label>
+            </p>
+            <p class="send"><input type="submit" value="送信"></p>
+        </form>
+        <label><p class="backHome"><a href="/">戻る</a></p></label>
+    </div>
+</body>
+</html>
