@@ -21,20 +21,24 @@ function h($s) {
 <body class="topPage">
     <div class="innerWrap">
         <h1>ブログ一覧</h1>
+        <hr>
         <table>
             <tr>
                 <th>タイトル</th>
                 <th>カテゴリ</th>
                 <th>投稿日時</th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
             <?php foreach($blogDate as $column): ?>
             <tr class="posts">
-                <td><?php echo h($column['title']) ?></td>
+                <td class="title"><?php echo h($column['title']) ?></td>
                 <td><?php echo h($blog->setCategoryName($column['category']))?></td>
                 <td><?php echo h($column['post_at']) ?></td>
                 <td><a href="detail.php?id=<?php echo $column['id'] ?>">詳細</a></td>
                 <td><a href="update_form.php?id=<?php echo $column ['id'] ?>">編集</a></td>
-                <td><a href="blog_delete.php?id=<?php echo $column ['id'] ?>">削除</a></td>
+                <td class="delete"><a href="blog_delete.php?id=<?php echo $column ['id'] ?>">削除</a></td>
             </tr>
             <?php endforeach; ?>
         </table>
