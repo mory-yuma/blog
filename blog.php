@@ -57,7 +57,7 @@ try {
     $stmt->bindValue(':id', $blogs['id'], PDO::PARAM_INT);
     $stmt->execute(); // INSERTクエリを実行
     $dbh->commit(); // コミット
-    echo 'ブログを更新しました！';
+    echo '<p style="font-weight: bold;text-align: center;">ブログを更新しました！</p>';
 } catch(PDOException $e){
     $dbh->rollBack(); // ロールバック
     exit($e->getMessage()); // エラーメッセージを出力してスクリプトを終了

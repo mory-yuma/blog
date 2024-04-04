@@ -18,12 +18,17 @@ $result = $blog->getById($_GET['id']);
 <body class="blogDetail">
     <div class="innerWrap">
         <h2>ブログ詳細</h2>
-        <h3><?php echo $result['title']?></h3>
         <hr>
-        <p class="time"><?php echo $result['post_at']?></p>
-        <p class="category">カテゴリ：<?php echo $blog->setCategoryName($result['category'])?></p>
+        <div class="flex">
+            <h3><?php echo $result['title']?></h3>
+            <div>
+            <p class="category">カテゴリ：<?php echo $blog->setCategoryName($result['category'])?></p>
+                <p class="time"><?php echo $result['post_at']?></p>
+            </div>
+        </div>
+        <hr>
         <div class="text">
-            <p>::<?php echo $result['content']?></p>
+            <p><?php echo $result['content']?></p>
         </div>
         <p class="backHome"><a href="/">戻る</a></p>
     </div>
